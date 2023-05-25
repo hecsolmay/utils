@@ -1,5 +1,6 @@
 const getInfoPage = ({ limit = 10, totalRows = 0, currentPage }) => {
-  const totalPages = Math.ceil(totalRows / limit)
+  const finalLimit = limit > 0 ? limit : 1
+  const totalPages = Math.ceil(totalRows / finalLimit)
   const page = currentPage > 0 && currentPage <= totalPages ? currentPage : 1
 
   return {
